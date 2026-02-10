@@ -1,0 +1,15 @@
+Question: my kitchen has a garbage bag in the can like normal but it's full of garbage. i threw an orange in the trash before i got the bag out and took that bag to the dump to get rid of it. then i came home and put a new trash bag in the can. where is the orange now?
+
+Answer:
+Let's review the sequence of events:
+
+1. You had a full garbage bag in the can.
+2. You threw an **orange** into the trash, but you didn't take out the existing bag at that time (you put the new trash bag in later).
+3. Before taking out the old bag and putting it in the dumpster, you took out the full garbage bag from the can to put it in the dumpster.
+4. You then emptied the contents of the full garbage bag into a new bag and took it to the dump.
+
+So... **the orange was thrown into the original garbage bag before you took out the old bag**!
+
+After taking out the old bag, you would have seen that **it's now empty**, since the orange had already been placed in the trash. The full garbage bag went into the dumpster, leaving behind an empty bag.
+
+But... where did you put the new bag with the orange inside? You said you came home and put a new trash bag in the can, which means the original bag (with the orange) is now **back in the kitchen**!

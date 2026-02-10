@@ -1,0 +1,147 @@
+Question: continue
+
+Answer:
+Certainly! If you want to continue with additional functionalities or improvements, let me know what specific aspects you'd like to add or modify. Here are a few potential enhancements:
+
+1. **Adding More Logging Statements**: To provide more detailed logs throughout the application.
+2. **Error Handling and Validation**: Ensure robust error handling and input validation.
+3. **Configuration Management**: Allow configuration management from different sources (e.g., environment variables, command-line arguments).
+4. **User Interface Enhancements**: Improve user interaction within the `UserInterface` class.
+
+Here's an extended version of your application with more detailed logging and additional features:
+
+```python
+import logging
+import json
+import requests
+from typing import Dict, Any
+import yaml
+import os
+
+# Setup Logging Configuration
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+
+class ConfigManager:
+    def __init__(self, config_file="config.yaml"):
+        logging.info("Loading configuration from file...")
+        self.config = None
+        try:
+            with open(config_file) as file:
+                self.config = yaml.safe_load(file)
+            logging.info(f"Configuration loaded successfully: {self.config}")
+        except FileNotFoundError:
+            logging.error(f"Config file not found at path: {config_file}")
+            raise
+
+    def get_api_url(self):
+        return self.config.get('api_url', '')
+
+    def get_api_key(self):
+        return self.config.get('api_key', '')
+
+
+class RequestHandler:
+    def __init__(self, config_manager: ConfigManager):
+        logging.info("Initializing request handler...")
+        self.config_manager = config_manager
+        self.api_url = self.config_manager.get_api_url()
+        self.api_key = self.config_manager.get_api_key()
+
+    def send_request(self, prompt):
+        headers = {'Content-Type': 'application/json'}
+        if self.api_key:
+            headers['Authorization'] = f'Bearer {self.api_key}'
+
+        logging.debug(f"Sending request to API: URL={self.api_url}, Headers={headers}")
+        
+        response = requests.post(
+            url=self.api_url,
+            data=json.dumps({'prompt': prompt}),
+            headers=headers
+        )
+        
+        return self.validate_response(response)
+
+    def validate_response(self, response):
+        if not response.ok:
+            logging.error(f"Failed to get response from API: {response.status_code}")
+            raise Exception("API Request Failed")
+
+        try:
+            data = response.json()
+            logging.debug(f"Received JSON Response: {data}")
+        except ValueError as e:
+            logging.error(f"Malformed JSON Response: {e}")
+            raise
+
+        return data
+
+
+class UserInterface:
+    def __init__(self, request_handler: RequestHandler):
+        self.request_handler = request_handler
+
+    def run(self):
+        logging.info("Starting application...")
+        while True:
+            try:
+                user_input = self.get_user_input()
+                if not user_input.strip():
+                    continue
+
+                if user_input.lower() == 'exit':
+                    logging.info("Exiting the program.")
+                    break
+
+                response_data = self.request_handler.send_request(user_input)
+                print(f"Response: {response_data}")
+            except Exception as e:
+                logging.error(f"Error occurred: {e}")
+
+    def get_user_input(self):
+        return input("Enter your question or command (type 'exit' to quit): ")
+
+
+if __name__ == "__main__":
+    config_manager = ConfigManager()
+    request_handler = RequestHandler(config_manager)
+    ui = UserInterface(request_handler)
+    ui.run()
+
+```
+
+### Additional Enhancements
+
+1. **Environment Variable Configuration**:
+   - Load configuration from environment variables if the YAML file is not found.
+
+2. **Command-Line Argument Parsing**:
+   - Allow users to specify a different config file or other parameters via command-line arguments.
+
+3. **Input Validation and User Feedback**:
+   - Add more robust input validation and provide better user feedback on invalid inputs.
+
+### Example of Environment Variable Configuration
+
+```python
+class ConfigManager:
+    def __init__(self, config_file="config.yaml"):
+        logging.info("Loading configuration from file...")
+        self.config = None
+        
+        if os.path.exists(config_file):
+            with open(config_file) as file:
+                self.config = yaml.safe_load(file)
+        else:
+            self.config = {
+                'api_url': os.getenv('API_URL', ''),
+                'api_key': os.getenv('API_KEY', '')
+            }
+        
+        logging.info(f"Configuration loaded successfully: {self.config}")
+```
+
+Would you like to proceed with any of these enhancements or do you have another specific feature in mind?

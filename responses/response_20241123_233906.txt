@@ -1,0 +1,14 @@
+Question: i have a marble and i flick it down the hallway and it goes down the stairs to the basement. there are 3 cupts in the basement (small, medium, large) the marble rolls into the medium cup then the medium cup falls over the the marble rolls into the small cup. then i bring all the cups upstairs and dump them into my hampster cage. then i take my hampster out of the cage and we go play on the slides at the park. where's the marble?
+
+Answer:
+Let's break down the sequence of events:
+
+1. You flick a marble down the hallway, and it rolls down the stairs to the basement.
+2. In the basement, there are three cups (small, medium, large).
+3. The marble rolls into the medium cup.
+4. The medium cup tips over, causing the marble to roll into the small cup.
+5. You bring all three cups upstairs and dump them into your hamster cage.
+
+Given that the marble rolled into the small cup when it tipped over, and you dumped all the cups (including the small one) into your hamster cage, the marble is inside the hamster cage.
+
+So, the marble is in your **hamster cage**.

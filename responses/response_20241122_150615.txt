@@ -1,0 +1,19 @@
+Question: if you put an orange in the trash then take the bag out of the trash and take the bag to the dumb and put a new bad in the trash where is the orange?
+
+Answer:
+Let's break down the sequence of events:
+
+1. You put an orange in the trash.
+2. You take the bag out of the trash (this moves the orange, but keeps it contained in the bag).
+3. You take the bag to the dumpster (again, this doesn't change where the orange is; it's still in the bag).
+4. You put a new bag in the trash (this replaces the original bag, not the contents of the bag).
+
+So, after all these steps, the **orange** is still... somewhere in one of those bags! 
+
+If you want to find out exactly where the orange is now, you'll need to check each bag:
+
+* Is it still in the original bag that was taken out of the trash?
+* Or did you put a new bag with the orange inside the dumpster?
+* And which one do you take out of the dumpster?
+
+The answer is... we don't know!

@@ -1,0 +1,19 @@
+{
+    "question": "what did i ask you last night about training?\n",
+    "timestamp": "20241122_104035",
+    "model": "qwen2.5:14b",
+    "responses": [
+        {
+            "temperature": 0.3,
+            "response": "I'm sorry, but as a language model, I do not have access to previous conversations or interactions. Each session is independent and does not retain any information from prior chats.\n\nIf you can provide more details about the question you asked last night, I would be happy to help answer it!"
+        },
+        {
+            "temperature": 0.5,
+            "response": "I'm sorry, but I don't have access to or retain any information about previous conversations. Each interaction is independent and starts anew.\n\nIf you can provide more context or details about what you asked last night, I'd be happy to help answer your question again!"
+        },
+        {
+            "temperature": 0.7,
+            "response": "I'm sorry, but I do not have the capability to recall or access previous conversations. Each interaction starts fresh, and I don't retain any information from prior chats.\n\nIf you can provide more details about what you asked last night, I would be happy to help you with your question again!"
+        }
+    ]
+}

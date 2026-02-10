@@ -1,0 +1,4 @@
+Original Task: make me a checkout page that mimics shopifys checkout page without the functionality, use html, css, and js only.
+
+Phase 1: Initial Analysis
+================================================================================

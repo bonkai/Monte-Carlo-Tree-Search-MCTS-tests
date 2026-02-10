@@ -1,0 +1,75 @@
+File: /Users/tresmith/Documents/MCTS/filebreaker.py
+
+Question: can you explain this script to me and what it does?
+
+Answer:
+I'd be happy to break down this script for you. Here's a detailed explanation:
+
+**Overview**
+-----------
+
+* **Language**: The script is written in Python.
+* **Purpose**: It appears to be a question-answering system utilizing the LLaMA (Large Language Model Application) API for processing questions, optionally with accompanying file content.
+* **Workflow**: 
+	1. Asks user for a question and an optional file to include.
+	2. Decomposes the task into subtasks using LLaMA's decomposition capability.
+	3. Processes each subtask, leveraging the LLaMA API again for answers.
+	4. Saves responses (including an aggregated final answer) as text files.
+
+**Step-by-Step Breakdown**
+---------------------------
+
+### **1. Initialization & Setup**
+
+* `setup_logging()`: Configures logging for the application.
+* `Config()` and `LLaMAAPI(config)`:
+	+ Load configuration settings (`Config` class, not shown in this snippet).
+	+ Initialize the LLaMA API interface with these config settings.
+* `DatabaseManager()`: Sets up a database manager (implementation details not provided).
+
+### **2. User Input & File Handling**
+
+* Asks user for:
+	1. A **question** to be processed.
+	2. An optional **file path** to include content from.
+
+### **3. Task Processing with Temporary Files**
+
+* Creates a temporary directory for this session's files.
+* Based on user input, constructs a `question_with_file` string (including file info if provided).
+* Saves the question (with file reference, if any) to the database using `db_manager.insert()`.
+
+#### **Decomposition & Subtask Processing**
+
+1. **Task Decomposition**:
+	* Calls `llama_api.decompose_task(question)` to break down the task into subtasks.
+	* If successful, saves the decomposition response as a text file (`decomposition.txt`).
+2. **Extract Subtasks**:
+	* Parses the decomposition response to extract individual subtasks using `extract_subtasks_from_text()`.
+3. **Process Each Subtask**:
+	* For each subtask, creates a contextual prompt (including original question and optionally, file content).
+	* Uses `llama_api.ask_question()` to get an answer for this subtask.
+	* Saves each response as a separate text file.
+
+### **4. Final Response Synthesis & Saving**
+
+* If multiple responses are obtained:
+	+ Creates a synthesis prompt combining all subtask questions and their respective answers.
+	+ Utilizes `llama_api.ask_question()` once more to generate a cohesive, final answer.
+	+ Saves this synthesized response as another text file (`final_response.txt`).
+
+### **5. Error Handling & Shutdown**
+
+* Catches keyboard interrupts and general exceptions, logging errors before application shutdown.
+
+**Example Use Case**
+--------------------
+
+1. User runs the script.
+2. When prompted:
+	* Enters a question: "How does one efficiently implement a machine learning model for image classification?"
+	* Optionally provides a file path containing relevant dataset information or prerequisites.
+3. The script processes the task, potentially generating multiple files in the response directory:
+	+ `decomposition.txt`: Breakdown of the original question into manageable parts.
+	+ `response_1.txt`, `response_2.txt`, ...: Answers to each subtask.
+	+ `final_response.txt`: A comprehensive answer synthesizing all subtask responses.

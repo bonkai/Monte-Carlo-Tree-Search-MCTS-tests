@@ -1,0 +1,23 @@
+{
+    "question": "if sally has 4 brothers and 7 sisters but her sister also has 7 sisters and each of her brothers has 3 other brothers and her neighbors have the same amount of kids how many kids in total are in both houses?",
+    "timestamp": "20241122_163504",
+    "model": "llama3.2:3b",
+    "decomposition_steps": [
+        "Question to answer: Total number of children in both houses",
+        "Step 1: Calculate Sally's siblings",
+        "Sally's brothers: 4",
+        "Sally's sisters: 7",
+        "Sally's total family members (excluding herself): 4 + 7 = 11",
+        "Step 2: Analyze information about sister's siblings",
+        "Sister's brothers: same as Sally's brothers, which is 4",
+        "Sister's sisters: 7",
+        "Sister's total siblings: 4 + 7 = 11",
+        "Step 3: Calculate total number of children in one house",
+        "Sally's family members: 11 (including herself)",
+        "Sister's family members: also 11",
+        "Total children in one house: 11 + 11 = 22",
+        "Step 4: Determine the same amount for both houses",
+        "No information about other neighbors is needed as it is stated that 'her neighbors have the same amount of kids' which implies multiple houses with the same amount, so multiply total by 2",
+        "Total number of children in both houses: 22 * 2 = 44"
+    ]
+}

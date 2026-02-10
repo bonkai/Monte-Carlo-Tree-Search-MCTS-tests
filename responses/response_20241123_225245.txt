@@ -1,0 +1,32 @@
+Question: if i have 3 sisters and so does my neighbor and he also has 2 brothers and so do i how many kids are there combined in both houses?
+
+Answer:
+Let's break down the information provided:
+
+- You have 3 sisters.
+- You have 2 brothers.
+- Your neighbor also has 3 sisters and 2 brothers.
+
+Now, let's count the number of children in each household:
+
+**Your Household:**
+- 1 (you)
+- 3 sisters
+- 2 brothers
+
+So, your household has a total of **6** children (including yourself).
+
+**Neighbor's Household:**
+- 1 (your neighbor)
+- 3 sisters
+- 2 brothers
+
+So, your neighbor’s household also has a total of **6** children (including the neighbor themselves).
+
+**Combined Total:**
+
+To find the combined total number of kids in both houses:
+- Your household: 6
+- Neighbor's household: 6
+
+Thus, there are a **total of 12** kids combined in both households.

@@ -1,0 +1,147 @@
+Question: db_manager.insert_memory(db_prompt, response)
+
+Answer:
+To integrate `db_manager` into your code for storing the conversation memory (i.e., user input and API responses), you need to ensure that:
+
+1. You have a database manager class (`DBManager`) that handles inserting data.
+2. The `UserInterface.run()` method interacts with this database manager.
+
+Here's an updated version of your code with these changes:
+
+```python
+import logging
+import json
+import requests
+from typing import Dict, Any
+import yaml
+import os
+import time
+
+# Setup Logging Configuration
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+
+class ConfigManager:
+    def __init__(self, config_file="config.yaml"):
+        logging.info("Loading configuration from file...")
+        self.config = None
+        
+        if os.path.exists(config_file):
+            with open(config_file) as file:
+                self.config = yaml.safe_load(file)
+        else:
+            self.config = {
+                'api_url': os.getenv('API_URL', ''),
+                'api_key': os.getenv('API_KEY', '')
+            }
+        
+        logging.info(f"Configuration loaded successfully: {self.config}")
+
+    def get_api_url(self):
+        return self.config.get('api_url', '')
+
+    def get_api_key(self):
+        return self.config.get('api_key', '')
+
+
+class RequestHandler:
+    def __init__(self, config_manager: ConfigManager):
+        logging.info("Initializing request handler...")
+        self.config_manager = config_manager
+        self.api_url = self.config_manager.get_api_url()
+        self.api_key = self.config_manager.get_api_key()
+
+    def send_request(self, prompt):
+        headers = {'Content-Type': 'application/json'}
+        if self.api_key:
+            headers['Authorization'] = f'Bearer {self.api_key}'
+
+        logging.debug(f"Sending request to API: URL={self.api_url}, Headers={headers}")
+        
+        response = requests.post(
+            url=self.api_url,
+            data=json.dumps({'prompt': prompt}),
+            headers=headers
+        )
+        
+        return self.validate_response(response)
+
+    def validate_response(self, response):
+        if not response.ok:
+            logging.error(f"Failed to get response from API: {response.status_code}")
+            raise Exception("API Request Failed")
+
+        try:
+            data = response.json()
+            logging.debug(f"Received JSON Response: {data}")
+        except ValueError as e:
+            logging.error(f"Malformed JSON Response: {e}")
+            raise
+
+        return data
+
+
+class DBManager:
+    def __init__(self):
+        # Initialize your database connection here
+        pass
+    
+    def insert_memory(self, user_input: str, response: Dict[str, Any]):
+        # Insert the memory (user input and API response) into the database
+        logging.info(f"Inserting memory: User Input={user_input}, Response={response}")
+        # Placeholder for actual database insertion logic
+
+
+class UserInterface:
+    def __init__(self, request_handler: RequestHandler):
+        self.request_handler = request_handler
+        self.db_manager = DBManager()  # Initialize the Database Manager
+        self.start_time = time.time()  # Record the start time here
+
+    def run(self):
+        logging.info("Starting application...")
+        while True:
+            try:
+                question = self.get_user_input()
+                if not question.strip():
+                    continue
+
+                db_prompt = question  # Store user input in db_prompt
+                response_data = self.request_handler.send_request(db_prompt)
+                print(f"Response: {response_data}")
+
+                # Insert memory into the database
+                self.db_manager.insert_memory(db_prompt, response_data)
+
+            except Exception as e:
+                logging.error(f"Error occurred: {e}")
+
+    def get_user_input(self):
+        return input("Enter your question or command (type 'exit' to quit): ")
+
+    def end_program(self):
+        duration = time.time() - self.start_time
+        logging.info(f"Program execution time: {duration:.2f} seconds")
+        print(f"\nProgram executed in {duration:.2f} seconds.")
+
+
+if __name__ == "__main__":
+    config_manager = ConfigManager()
+    request_handler = RequestHandler(config_manager)
+    ui = UserInterface(request_handler)
+
+    try:
+        ui.run()
+    finally:
+        ui.end_program()
+```
+
+### Explanation
+
+1. **DBManager Class**: A placeholder class for managing database interactions. You would need to implement the actual logic inside `insert_memory` to connect and insert data into your database.
+2. **UserInterface Initialization**: The `UserInterface` now initializes an instance of `DBManager`.
+3. **Insert Memory in Run Method**: After getting a response from the API, the method calls `self.db_manager.insert_memory(db_prompt, response_data)` to store the user input and response in the database.
+
+This setup ensures that every interaction with the API is stored in your database for future reference or analysis. Make sure to replace the placeholder logic inside `DBManager` with actual database connection and insertion code specific to your environment (e.g., using SQLAlchemy, SQLite, PostgreSQL, etc.).

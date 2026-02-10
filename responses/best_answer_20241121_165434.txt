@@ -1,0 +1,8 @@
+Question: do i have to do part one of step 2? or can i skip that?
+
+Best Answer:
+In the context of our previous conversation, Step 1 is setting up Stripe, and Part 1 of Step 2 is installing the Stripe JavaScript library in your ecommerce website's frontend code.
+
+To answer your question: you don't have to do it, but if you want to implement a payment gateway on your website, you should install the Stripe JavaScript library (Part 1 of Step 2) as part of setting up Stripe for payment processing.
+
+Skipping this step might cause issues with your checkout process or prevent payment processing altogether. However, if you're not planning to use Stripe for payment processing, then installing the library might not be necessary for you.

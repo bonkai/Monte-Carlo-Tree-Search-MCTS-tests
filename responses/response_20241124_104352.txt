@@ -1,0 +1,27 @@
+Question: greg and tammy have the same number of brothers and sisters. they each have 5 sisters and 4 brothers. and each of their siblings has the same number of siblings as eachother. how many girls and boys are in each house?
+
+Answer:
+Let's analyze the information:
+
+**Common Information for Both Greg and Tammy:**
+
+* Each has 5 sisters.
+* Each has 4 brothers.
+
+Since they have the same number of brothers and sisters, and we know the exact counts:
+
+* **Girls in Each House:** 5 (sisters) + 1 (either Greg or Tammy, but since the question asks for girls, we only count Tammy in her house and no one additional in Greg's house as he is a boy) 
+	+ For Tammy's house: 5 sisters + Tammy = **6 Girls**
+	+ For Greg's house: Just the 5 sisters = **5 Girls**
+* **Boys in Each House:** 4 (brothers) + 1 (either Greg or Tammy, but since we're counting boys now, we only count Greg in his house and no one additional in Tammy's house as she is a girl)
+	+ For Greg's house: 4 brothers + Greg = **5 Boys**
+	+ For Tammy's house: Just the 4 brothers = **4 Boys**
+
+**Each House's Breakdown:**
+
+* **Tammy's House:**
+	+ Girls: **6** (5 sisters + Tammy)
+	+ Boys: **4**
+* **Greg's House:**
+	+ Girls: **5** (just the sisters)
+	+ Boys: **5** (4 brothers + Greg)

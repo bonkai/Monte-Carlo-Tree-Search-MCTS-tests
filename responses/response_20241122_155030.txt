@@ -1,0 +1,49 @@
+Question: if sally has 4 brothers and 7 sisters but her sister also has 7 sisters and each of her brothers has 3 other brothers and her neighbors have the same amount of kids how many kids in total are in both houses?
+
+Answer:
+Let's re-examine the information:
+
+**Sally's family:**
+
+* Sally has 4 brothers.
+* Sally has 7 sisters.
+
+We know that each of her brothers has 3 other brothers, but this doesn't tell us anything about how many children live in each house. However, we can make an assumption:
+
+Since there are 11 siblings (4 brothers + 7 sisters), and Sally's family is one of the two houses mentioned, we can assume that Sally's family lives in the same house as her sister.
+
+**Her sister's family:**
+
+* Her sister also has 7 sisters. This means she has at least 1 brother, since every child must have a sibling.
+* We know each of her brothers has 3 other brothers.
+
+Let's count the number of siblings:
+
+Sally and her siblings (4 brothers + 6 sisters): 11
+Her sister and her sisters (7 sisters): 8
+
+The total number of kids in Sally's house is: 11
+The total number of kids in her sister's house is also: 11
+
+Now, let's consider the "neighbor" statement. Since both houses have the same amount of kids, we can assume that the neighbor refers to one of the siblings.
+
+If Sally has 4 brothers and each brother has 3 other brothers, then Sally must live with at least 7 siblings (including herself).
+
+Since her sister lives in the same house as Sally, and they both have the same number of kids, it's possible that the "neighbor" refers to one of Sally's sisters or her sister.
+
+However, since we know that each sibling has 3 other brothers, we can conclude that:
+
+* Sally must live with all 7 of her sisters.
+* Her sister lives in the same house as Sally and has the same number of kids (11).
+
+The total number of kids in both houses is indeed: **22**
+
+However, this is an incorrect assumption. Let's correct it.
+
+**Corrected answer:**
+
+Since Sally's family lives with all 7 of her sisters, that means they are one household. Her sister also lives with the same amount of siblings (8), so she must be living in a separate house.
+
+Let's assume there is only 1 sibling that was mentioned as having neighbors. This would mean that this specific sibling's brother has other brothers.
+
+We have already accounted for Sally and her 7 sisters, so we need to find the number of kids in this one neighbor's household.

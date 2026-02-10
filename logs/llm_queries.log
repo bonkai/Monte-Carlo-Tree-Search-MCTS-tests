@@ -1,0 +1,124 @@
+2024-11-21 23:01:05,556 - INFO - Use pytorch device_name: mps
+2024-11-21 23:01:05,556 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-21 23:01:06,686 - INFO - Use pytorch device_name: mps
+2024-11-21 23:01:06,686 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-21 23:01:30,638 - INFO - Context prompt built successfully
+2024-11-21 23:01:30,639 - INFO - Starting MCTS with 5 iterations
+2024-11-21 23:01:50,781 - INFO - Received response for temperature 0.3
+2024-11-21 23:02:17,986 - INFO - Received response for temperature 0.39999999999999997
+2024-11-21 23:02:34,631 - INFO - Received response for temperature 0.5
+2024-11-21 23:03:11,776 - INFO - Received response for temperature 0.6
+2024-11-21 23:03:47,449 - INFO - Received response for temperature 0.7
+2024-11-21 23:03:47,455 - INFO - Saved all responses to responses/responses_20241121_230347.json
+2024-11-21 23:03:47,477 - INFO - Selected best response from 5 candidates
+2024-11-21 23:05:37,996 - INFO - Use pytorch device_name: mps
+2024-11-21 23:05:37,996 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-21 23:05:39,571 - INFO - Use pytorch device_name: mps
+2024-11-21 23:05:39,571 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-21 23:06:24,338 - INFO - Context prompt built successfully
+2024-11-21 23:06:24,339 - INFO - Starting MCTS with 5 iterations
+2024-11-21 23:06:40,870 - INFO - Received response for temperature 0.3
+2024-11-21 23:06:51,882 - INFO - Received response for temperature 0.39999999999999997
+2024-11-21 23:07:04,268 - INFO - Received response for temperature 0.5
+2024-11-21 23:07:16,595 - INFO - Received response for temperature 0.6
+2024-11-21 23:07:28,603 - INFO - Received response for temperature 0.7
+2024-11-21 23:07:28,605 - INFO - Saved all responses to responses/responses_20241121_230728.json
+2024-11-21 23:07:28,624 - INFO - Selected best response from 5 candidates
+2024-11-22 00:03:41,842 - INFO - Use pytorch device_name: mps
+2024-11-22 00:03:41,842 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-22 00:04:39,208 - INFO - Completed MCTS iteration 1/100
+2024-11-22 00:06:43,233 - INFO - Completed MCTS iteration 2/100
+2024-11-22 00:06:47,690 - INFO - Completed MCTS iteration 3/100
+2024-11-22 00:06:52,774 - INFO - Completed MCTS iteration 4/100
+2024-11-22 00:08:43,414 - INFO - Use pytorch device_name: mps
+2024-11-22 00:08:43,414 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-22 00:09:18,359 - INFO - Completed MCTS iteration 1/3
+2024-11-22 00:11:37,250 - INFO - Completed MCTS iteration 2/3
+2024-11-22 00:11:42,757 - INFO - Completed MCTS iteration 3/3
+2024-11-22 00:11:42,757 - ERROR - Error in main execution: float division by zero
+Traceback (most recent call last):
+  File "/Users/tresmith/Documents/MCTS/main.py", line 93, in main
+    best_response = mcts.search(question, system_prompt)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tresmith/Documents/MCTS/mcts.py", line 55, in search
+    best_child = max(root.children, key=lambda c: c.value / c.visits)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tresmith/Documents/MCTS/mcts.py", line 55, in <lambda>
+    best_child = max(root.children, key=lambda c: c.value / c.visits)
+                                                  ~~~~~~~~^~~~~~~~~~
+ZeroDivisionError: float division by zero
+2024-11-22 00:18:35,632 - INFO - Use pytorch device_name: mps
+2024-11-22 00:18:35,632 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-22 00:18:40,974 - INFO - Completed MCTS iteration 1/10
+2024-11-22 00:19:12,312 - INFO - Completed MCTS iteration 2/10
+2024-11-22 00:19:13,468 - INFO - Completed MCTS iteration 3/10
+2024-11-22 00:19:14,603 - INFO - Completed MCTS iteration 4/10
+2024-11-22 00:19:43,890 - INFO - Completed MCTS iteration 5/10
+2024-11-22 00:20:14,509 - INFO - Completed MCTS iteration 6/10
+2024-11-22 00:20:43,185 - INFO - Completed MCTS iteration 7/10
+2024-11-22 00:20:44,396 - INFO - Completed MCTS iteration 8/10
+2024-11-22 00:20:45,345 - INFO - Completed MCTS iteration 9/10
+2024-11-22 00:20:46,430 - INFO - Completed MCTS iteration 10/10
+2024-11-22 00:21:54,412 - INFO - Completed MCTS iteration 1/10
+2024-11-22 00:21:57,076 - INFO - Completed MCTS iteration 2/10
+2024-11-22 00:21:57,475 - INFO - Completed MCTS iteration 3/10
+2024-11-22 00:21:57,877 - INFO - Completed MCTS iteration 4/10
+2024-11-22 00:22:00,382 - INFO - Completed MCTS iteration 5/10
+2024-11-22 00:22:02,645 - INFO - Completed MCTS iteration 6/10
+2024-11-22 00:22:04,835 - INFO - Completed MCTS iteration 7/10
+2024-11-22 00:22:05,239 - INFO - Completed MCTS iteration 8/10
+2024-11-22 00:22:05,571 - INFO - Completed MCTS iteration 9/10
+2024-11-22 00:22:05,969 - INFO - Completed MCTS iteration 10/10
+2024-11-22 00:22:35,755 - INFO - Completed MCTS iteration 1/10
+2024-11-22 00:22:38,736 - INFO - Completed MCTS iteration 2/10
+2024-11-22 00:22:39,181 - INFO - Completed MCTS iteration 3/10
+2024-11-22 00:22:39,515 - INFO - Completed MCTS iteration 4/10
+2024-11-22 00:22:42,162 - INFO - Completed MCTS iteration 5/10
+2024-11-22 00:22:45,319 - INFO - Completed MCTS iteration 6/10
+2024-11-22 00:22:48,355 - INFO - Completed MCTS iteration 7/10
+2024-11-22 00:22:48,689 - INFO - Completed MCTS iteration 8/10
+2024-11-22 00:22:49,068 - INFO - Completed MCTS iteration 9/10
+2024-11-22 00:22:49,404 - INFO - Completed MCTS iteration 10/10
+2024-11-22 10:25:24,307 - INFO - Use pytorch device_name: mps
+2024-11-22 10:25:24,307 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-22 10:25:33,784 - INFO - Completed MCTS iteration 1/10
+2024-11-22 10:25:41,682 - INFO - Completed MCTS iteration 2/10
+2024-11-22 10:25:42,074 - INFO - Completed MCTS iteration 3/10
+2024-11-22 10:25:42,463 - INFO - Completed MCTS iteration 4/10
+2024-11-22 10:25:46,631 - INFO - Completed MCTS iteration 5/10
+2024-11-22 10:25:50,630 - INFO - Completed MCTS iteration 6/10
+2024-11-22 10:25:54,934 - INFO - Completed MCTS iteration 7/10
+2024-11-22 10:25:55,328 - INFO - Completed MCTS iteration 8/10
+2024-11-22 10:25:55,722 - INFO - Completed MCTS iteration 9/10
+2024-11-22 10:25:56,133 - INFO - Completed MCTS iteration 10/10
+2024-11-22 10:25:56,428 - INFO - Successfully stored memory: what question did i ask last night about training?...
+2024-11-22 10:25:56,428 - INFO - Successfully stored in vector memory
+2024-11-22 10:25:56,430 - INFO - Updated conversation context
+2024-11-22 10:25:56,430 - INFO - Saved response to file
+2024-11-22 10:31:39,106 - INFO - Completed MCTS iteration 1/10
+2024-11-22 10:34:05,524 - INFO - Use pytorch device_name: mps
+2024-11-22 10:34:05,524 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-11-22 10:34:13,638 - INFO - Building context-aware prompt...
+2024-11-22 10:34:14,186 - INFO - Found relevant memory (similarity: 0.62)
+2024-11-22 10:34:14,186 - INFO - Found relevant memory (similarity: 0.61)
+2024-11-22 10:34:14,186 - INFO - Found relevant memory (similarity: 0.61)
+2024-11-22 10:34:14,187 - INFO - Found relevant memory (similarity: 0.61)
+2024-11-22 10:34:14,187 - INFO - Found relevant memory (similarity: 0.61)
+2024-11-22 10:34:14,187 - INFO - Added relevant memory with similarity 0.62
+2024-11-22 10:34:14,187 - INFO - Added relevant memory with similarity 0.61
+2024-11-22 10:34:14,187 - INFO - Added relevant memory with similarity 0.61
+2024-11-22 10:34:14,187 - INFO - Added relevant memory with similarity 0.61
+2024-11-22 10:34:14,187 - INFO - Added relevant memory with similarity 0.61
+2024-11-22 10:34:14,187 - INFO - Built prompt with 5 relevant memories and 0 current conversation messages
+2024-11-22 10:34:14,187 - INFO - Completed MCTS iteration 1/10
+2024-11-22 10:34:32,063 - INFO - Completed MCTS iteration 2/10
+2024-11-22 10:34:32,547 - INFO - Completed MCTS iteration 3/10
+2024-11-22 10:34:32,914 - INFO - Completed MCTS iteration 4/10
+2024-11-22 10:34:48,647 - INFO - Completed MCTS iteration 5/10
+2024-11-22 10:35:03,838 - INFO - Completed MCTS iteration 6/10
+2024-11-22 10:35:19,364 - INFO - Completed MCTS iteration 7/10
+2024-11-22 10:35:19,856 - INFO - Completed MCTS iteration 8/10
+2024-11-22 10:35:20,352 - INFO - Completed MCTS iteration 9/10
+2024-11-22 10:35:20,782 - INFO - Completed MCTS iteration 10/10
+2024-11-22 10:35:21,130 - INFO - Successfully stored memory: what did i ask you last night about training?...
+2024-11-22 10:35:21,130 - INFO - Successfully stored exchange in vector memory

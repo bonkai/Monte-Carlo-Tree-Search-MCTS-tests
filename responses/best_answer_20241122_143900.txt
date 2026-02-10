@@ -1,0 +1,144 @@
+Question: that doesn't look right at all
+
+Best Answer:
+Shopify's default checkout page has a unique layout and design elements that can be challenging to replicate exactly.
+
+Let me try again with a different approach. Here is a new version of the HTML and CSS code:
+
+### HTML (index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="checkout-container">
+    <div class="header">
+        <h2>Shopping Cart Summary</h2>
+    </div>
+    
+    <div class="cart-items">
+        <ul>
+            <li>
+                <img src="https://via.placeholder.com/100" alt="Product Image">
+                <span class="product-name">Sample Product 1</span>
+                <span class="price">$9.99</span>
+                <button>Remove</button>
+            </li>
+            <!-- Add more products here -->
+        </ul>
+    </div>
+    
+    <div class="total-section">
+        <p>Total: $19.98</p>
+        <button>Pay Now</button>
+    </div>
+</div>
+
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    height: 100%;
+}
+
+.checkout-container {
+    width: 600px;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    border-radius: 10px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.cart-items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-items li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-name {
+    font-size: 16px;
+    color: #666;
+    margin-left: 20px;
+}
+
+.price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.cart-items li button {
+    background-color: transparent;
+    border: none;
+    color: #999;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#cart-total p {
+    font-size: 18px;
+    color: #333;
+}
+
+button {
+    background-color: #0069d9;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0053b3;
+}
+```
+
+This version includes a header with the shopping cart summary, a list of items with images and prices, and a total section with the final price. I've also tried to match the layout and design elements as closely as possible.
+
+Please let me know if this version is more to your liking or if there's anything else I can help you with!

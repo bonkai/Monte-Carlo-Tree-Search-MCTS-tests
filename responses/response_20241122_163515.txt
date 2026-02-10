@@ -1,0 +1,35 @@
+Question: if sally has 4 brothers and 7 sisters but her sister also has 7 sisters and each of her brothers has 3 other brothers and her neighbors have the same amount of kids how many kids in total are in both houses?
+
+Answer:
+Let's break it down:
+
+**Sally's family:**
+
+* Sally has 4 brothers.
+* Sally has 7 sisters.
+
+So, Sally is one of the 11 children (4 brothers + 7 sisters).
+
+Since each of her brothers has 3 other brothers, that means there are at least 9 siblings in total for Sally's family (not counting herself). This would mean:
+
+* The remaining 2 siblings are Sally's sisters.
+* However, we know Sally's sister also has 7 sisters. So, the only explanation is that Sally and her sister live in two separate households.
+
+**Her sister's family:**
+
+* Her sister also has 7 sisters. This means she has at least 1 brother, since every child must have a sibling.
+* We know each of her brothers has 3 other brothers.
+
+Let's count the number of siblings:
+
+Sally's family (4 brothers + 6 sisters): 10
+Her sister's family (7 sisters + 1 brother = 8)
+
+The total number of kids in Sally's house is: **10**
+The total number of kids in her sister's house is also: **8**
+
+Since both houses have the same amount of kids, we can conclude that:
+
+**Total number of kids in both houses:** **18**
+
+This answer assumes that the neighbors refer to siblings who live in separate households.

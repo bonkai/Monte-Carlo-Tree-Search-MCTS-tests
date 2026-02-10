@@ -1,0 +1,36 @@
+Question: if jimmy has 3 brothers and each of his brothers has 3 brothers and he also has 5 sisters and each of his brothers also has 5 sisters and his best friend which is his neighbor has the same number of brothers and sisteres how many kids live in both houses combined?
+
+Answer:
+Let's break down the information step-by-step to determine the total number of children in Jimmy's house and his neighbor's house.
+
+**Jimmy's Family:**
+- Jimmy has 3 brothers.
+- Each brother also has 3 brothers. Since they are siblings, this includes Jimmy himself (so each brother has Jimmy as one of their brothers).
+- Therefore, each brother has 2 other brothers besides Jimmy (i.e., the total is Jimmy + 2 more brothers = 3 brothers).
+
+So, Jimmy and his 3 brothers make up the 4 boys in the family.
+
+- Jimmy also has 5 sisters.
+- Each of his brothers also has 5 sisters. Since they share all siblings equally, each brother also has these 5 sisters.
+
+**Jimmy's House:**
+- Total number of children in Jimmy’s house:
+  - Boys: Jimmy + 3 brothers = 4 boys
+  - Girls: 5 sisters
+
+So, the total number of children in Jimmy’s house is \(4 \text{ (boys)} + 5 \text{ (girls)} = 9\) children.
+
+**Neighbor's Family:**
+- The neighbor has the same configuration as Jimmy:
+  - 3 brothers
+  - 5 sisters
+
+Therefore, the neighbor's house also has 9 children (4 boys and 5 girls).
+
+**Combined Total:**
+- Jimmy’s house: 9 children
+- Neighbor’s house: 9 children
+
+So, the total number of children in both houses combined is \(9 + 9 = 18\).
+
+Thus, there are **18 children** living in both houses combined.

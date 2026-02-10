@@ -1,0 +1,107 @@
+Question: logging.info("Starting application...")
+
+Answer:
+Sure, adding logging statements is a great way to track the flow of your application. Here’s how you can integrate `logging.info("Starting application...")` into the existing code:
+
+1. **Add Logging Statement in the Initialization Section**: This will help you know when the application starts running.
+2. **Ensure Proper Configuration for Logging**.
+
+Here's the updated implementation with logging added at the start of the main execution flow:
+
+```python
+import logging
+import json
+import requests
+from typing import Dict, Any
+import yaml
+import os
+
+# Setup Logging Configuration
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
+
+class ConfigManager:
+    def __init__(self, config_file="config.yaml"):
+        logging.info("Loading configuration from file...")
+        with open(config_file) as file:
+            self.config = yaml.safe_load(file)
+
+    def get_api_url(self):
+        return self.config.get('api_url', '')
+
+    def get_api_key(self):
+        return self.config.get('api_key', '')
+
+
+class RequestHandler:
+    def __init__(self, config_manager: ConfigManager):
+        self.config_manager = config_manager
+        self.api_url = self.config_manager.get_api_url()
+        self.api_key = self.config_manager.get_api_key()
+
+    def send_request(self, prompt):
+        headers = {'Content-Type': 'application/json'}
+        if self.api_key:
+            headers['Authorization'] = f'Bearer {self.api_key}'
+
+        response = requests.post(
+            url=self.api_url,
+            data=json.dumps({'prompt': prompt}),
+            headers=headers
+        )
+        
+        return self.validate_response(response)
+
+    def validate_response(self, response):
+        if not response.ok:
+            logging.error(f"Failed to get response from API: {response.status_code}")
+            raise Exception("API Request Failed")
+
+        try:
+            data = response.json()
+        except ValueError as e:
+            logging.error(f"Malformed JSON Response: {e}")
+            raise
+
+        return data
+
+
+class UserInterface:
+    def __init__(self, request_handler: RequestHandler):
+        self.request_handler = request_handler
+
+    def run(self):
+        logging.info("Starting application...")
+        while True:
+            try:
+                user_input = self.get_user_input()
+                if not user_input.strip():
+                    continue
+
+                if user_input.lower() == 'exit':
+                    logging.info("Exiting the program.")
+                    break
+
+                response_data = self.request_handler.send_request(user_input)
+                print(f"Response: {response_data}")
+            except Exception as e:
+                logging.error(f"Error occurred: {e}")
+
+    def get_user_input(self):
+        return input("Enter your question or command (type 'exit' to quit): ")
+
+
+if __name__ == "__main__":
+    config_manager = ConfigManager()
+    request_handler = RequestHandler(config_manager)
+    ui = UserInterface(request_handler)
+    ui.run()
+```
+
+In this updated code:
+- `logging.info("Loading configuration from file...")` is added in the `ConfigManager.__init__` method to log when the configuration is loaded.
+- `logging.info("Starting application...")` is added at the start of the `UserInterface.run` method to indicate that the application has started running.
+
+This will help you track the flow and status of your application more effectively.
