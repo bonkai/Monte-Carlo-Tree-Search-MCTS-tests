@@ -1,0 +1,18 @@
+# Added during forge auto-push enrollment — keep secrets & bloat out of git.
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_rsa.*
+*.p12
+*.pfx
+*credential*
+*client_secret*
+*.log
